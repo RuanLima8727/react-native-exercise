@@ -1,12 +1,15 @@
 import React from 'react';
+import { ImageBackground } from 'react-native';
 import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
-import logo from '../assets/logo.png'
+import Fundo from '../assets/fundo.jpg';
+import LogoSpace from '../assets/logoSpace.png';
 
 export default function Login ({navigation}){
     return(
-        <View style={style.fundo}>
-            <View style={style.div}>               
-                <Image style={style.logo} source={logo} ></Image>
+       <ImageBackground source={Fundo} style={style.fundo}>
+           
+           <View style={style.div} >               
+                <Image style={style.logo} source={LogoSpace} ></Image>
 
                 <Text style={style.corTexto}>Email : </Text>
                 <TextInput style={style.input}>
@@ -18,18 +21,17 @@ export default function Login ({navigation}){
 
                 </TextInput>
 
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity style={style.button} onPress={()=>{navigation.navigate('Game')}} >
                     <Text style={style.buttonText}>Próximo</Text>
                 </TouchableOpacity>
 
-                <Text style={style.senha}>Esqueceu a senha ? </Text>
-
-               <TouchableOpacity onPress={()=>{navigation.navigate('Cadastro')}}>
-                    <Text style={style.senha}>Ainda não tem uma conta ? Clique aqui! </Text>
+               <TouchableOpacity onPress={()=>{navigation.navigate('Game')}}>
+                    <Text style={style.senha}>Quer apenas dar uma olhadinha? ? Clique aqui! </Text>
                </TouchableOpacity>
                 
             </View>
-        </View>
+       </ImageBackground>
+       
     )
 }
 const style = StyleSheet.create({
@@ -41,7 +43,7 @@ const style = StyleSheet.create({
         },
     div : {
         borderRadius : 25,
-        backgroundColor : "white",
+        backgroundColor : "#4F4F4F",
         width : "80%",
         height : 380,
         alignItems: 'center',
@@ -49,7 +51,7 @@ const style = StyleSheet.create({
     },
     logo : {
         resizeMode : 'stretch',
-        width : "65%",
+        width : "90%",
         height : "30%",
         marginTop : 15
         
@@ -62,11 +64,11 @@ const style = StyleSheet.create({
         borderRadius : 10
     },
     corTexto :{
-        color : "#219EBC",
+        color : "white",
         marginRight : "60%",
     },
     senha : {
-        color : "#219EBC",
+        color : "white",
         fontSize : 12,
         paddingVertical : 10
     },
@@ -74,12 +76,12 @@ const style = StyleSheet.create({
         margin : 10,
         alignItems: 'center',
         borderRadius : 10,
-        backgroundColor : "#FFB703",
+        backgroundColor : "white",
         width : "80%",
         height : 25
     },
     buttonText:{
-        color : "white",
+        color : "black",
         paddingTop : 2,
     }
     })

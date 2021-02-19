@@ -1,31 +1,32 @@
 import React from 'react';
 import { Text, View, ImageBackground, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import Fundo from '../assets/fundo.jpg';
+import Microondas from '../assets/microondas.png'
+import Microondas2 from '../assets/microondas2.png'
+import Lavaroupas from '../assets/lavaroupas.png'
+import Geladeira from '../assets/geladeira.png'
 
-import backfavela from '../assets/backfavela.jpg'
-import helio from '../assets/helio.png'
 
 export default function Game({navigation}){
     return(
         <View style={style.view}>
-            <ImageBackground source={backfavela}style={style.container}imageStyle={style.image}>
-                
-                <View style={style.personagem}>
-                    <Image source={helio}
-                        style={style.helio}
-                    ></Image>
-                </View>
-
-                <Text style={style.talk}>
-                    Oi tudo bem? Prazer sou o Hélio!
-                </Text>
-
-            <TouchableOpacity style={style.button}>
-                <Text style= {{color : 'white'}}>Próximo</Text>
-            </TouchableOpacity>
+            <ImageBackground source={Fundo}style={style.container}imageStyle={style.image}>
 
             <TouchableOpacity style={style.buttonHome} onPress={()=>{navigation.navigate('Home')}} >
                 <Text style= {{color : 'white'}} >Home</Text>
             </TouchableOpacity>
+
+                <Text style={style.titulo}> Veja Nossos Produtos !!!!</Text>
+                
+                <Image style={style.div} source={Geladeira} ></Image>               
+
+                <Image style={style.div2} source={Microondas} ></Image>            
+
+                <Image style={style.div3} source={Microondas2} ></Image>
+                                
+                <Image style={style.div4} source={Lavaroupas} ></Image>       
+               
+          
 
             </ImageBackground>
             
@@ -65,27 +66,59 @@ const style = StyleSheet.create({
         borderRadius : 10,        
     },
     buttonHome :{
-        backgroundColor : "#219EBC",
+        backgroundColor : "#4F4F4F",
         width : "20%",
         height : "5%",
         position : "absolute",
-        bottom : "89%",
+        bottom : "85%",
         marginLeft : "70%",
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius : 10,
     },
-    personagem :{
+    titulo:{
+       fontSize : 25,
+       color : "white",
+       backgroundColor : "#4F4F4F",
+            
+           },
+    div :{
         position : "absolute",
-        bottom : 0,
-        height : '60%',
-        width : '100%',
-        paddingLeft : '40%',
-               
+        bottom : "0%",
+        height : '35%',
+        width : '40%',
+        margin : 20,
+        backgroundColor : "#4F4F4F",
+        borderRadius : 10             
     },
-    helio :{
-        flex : 1,
-        resizeMode : 'stretch',
-        width : '100%'        
-    }
+    div2 :{
+        position : "absolute",
+        bottom : "40%",
+        height : '35%',
+        width : '40%',
+        margin : 20,
+        backgroundColor : "#4F4F4F",
+        borderRadius : 10            
+    },
+    div3 :{
+        position : "absolute",
+        bottom : "0%",
+        height : '35%',
+        width : '40%',
+        margin : 20,
+        marginLeft : 190,
+        backgroundColor : "#4F4F4F", 
+        borderRadius : 10             
+    },
+    div4 :{
+        position : "absolute",
+        bottom : "40%",
+        height : '35%',
+        width : '40%',
+        margin : 20,
+        marginLeft : 190,
+        backgroundColor : "#4F4F4F",
+        borderRadius : 10              
+    },
+    
   });

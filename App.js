@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Game from './Pages/Game';
 import Login from './Pages/login';
 import Home from './Pages/home/Home';
-import Cadastro from './Pages/cadastro/Cadastro';
+
 
 
 const Stack = createStackNavigator();
@@ -16,7 +16,6 @@ function MyStack() {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Game" component={Game} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Cadastro" component={Cadastro} />
     </Stack.Navigator>
   );
 }
