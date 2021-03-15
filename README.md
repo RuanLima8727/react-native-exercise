@@ -1,4 +1,4 @@
 <h2>Exercício em React Native da Space Eletro</h2>
-<div style="background-color: blue"><img src="/assets/logoSpace.png" /></div>
+<img src="/assets/logoSpace.png" />
 <p><b>Pequeno projeto de 3 telas + rotas entre elas feitos em React Native</b></p>
 
